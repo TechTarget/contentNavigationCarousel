@@ -33,7 +33,8 @@ Expects to see html in this form:
 	
 ### Gotchas:
 
-If content item html contains images, make sure their dimensions are set either by css on inline img attributes. If they're not, height calculations will likely be off as they're calculated before the images are finished loading.	
+* Widget container can have any class/id name but inside should contain a div called 'contentCollection' and inside that should be 1 to many divs or list items that have a class of 'contentItem' which contain whatever html should show up in the widget. Finally, the links that go to the content should have a class of 'contentLink'.
+* If content item html contains images, make sure their dimensions are set either by css on inline img attributes. If they're not, height calculations will likely be off as they're calculated before the images are finished loading.
 
 ###Tested in: 
 Chrome, FF, IE7+

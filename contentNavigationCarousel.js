@@ -36,7 +36,7 @@
 		var contentItems = contentCollection.find('.contentItem');
 		var contentItemHeight = 0;
 		var contentItemOffset = 0;
-		var links = contentItems.find('h2').find('a');
+		var links = contentItems.find('.contentLink');
 		var list = $('<div class="contentNavigation" />');
 		var listHeight = 0;
 		var listItems;
@@ -93,9 +93,9 @@
 			$(this).css({'display': 'none','top': contentItemOffset + 'px'});
 
 		});
-		
+
 		var showContent = function (e) {
-			
+
 			// if mouse event is a click, prevent the browser following the href
 			if (o.mouseEvent === 'click') {
 				e.preventDefault();
@@ -103,7 +103,7 @@
 
 			// cache item selector
 			listItem = $(this);
-			
+
 			// get index of current item focus
 			nextItem = listItem.data('index');
 
@@ -115,7 +115,6 @@
 			listItems.eq(nextItem).addClass('active');
 
 			// if we're not on the active item then switch out visible content
-			// and update visibleItem
 			if (nextItem !== visibleItem) {
 
 				contentItems.eq(visibleItem).fadeOut(o.switchSpeed/2, function() {
@@ -123,11 +122,12 @@
 					contentItems.eq(nextItem).fadeIn(o.switchSpeed/2);
 
 				});
-				
+
+				// update visibleItem
 				visibleItem = nextItem;
 
 			}
-			
+
 		};
 
 		// attach event handler function
