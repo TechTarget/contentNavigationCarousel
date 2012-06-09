@@ -1,0 +1,39 @@
+contentNavigationCarousel
+=====================
+
+A jQuery plugin that takes a list of content items and generates a navigation list from content links to form the awesome power of a carousel.
+
+### Options:
+* **autoPlay:** boolean; this will automagically rotate through the content list
+* **autoPlaySpeed:** integer; the speed (0 - ∞ in ms) at which the autoplay will rotate through the items
+* **mouseEvent:** string; which mouse event will trigger the content switch; currently supported: hover & click
+* **switchSpeed:** integer; the speed (0 - ∞ in ms) that it takes to switch to displaying a new contentItem
+* **equalizeHeights:** boolean; equalizes the heights of the content container and navigation list to whichever is largest
+
+### Markup Structure:
+
+Expects to see html in this form:
+
+> div.contentNavigationCarousel
+> > div.contentCollection
+> > > div.contentItem
+> > > div.contentItem
+> > > div.contentItem
+   
+...etc.
+
+###Example:
+	$('.contentNavigationCarousel').contentNavigationCarousel({
+		autoPlay: true,
+		autoPlaySpeed: 5000,
+		mouseEvent: 'hover',
+		switchSpeed: 400,
+        equalizeHeights: true
+	});
+	
+### Gotchas:
+
+If content item html contains images, make sure their dimensions are set either by css on inline img attributes. If they're not, height calculations will likely be off as they're calculated before the images are finished loading.	
+
+###Tested in: 
+Chrome, FF, IE7+
