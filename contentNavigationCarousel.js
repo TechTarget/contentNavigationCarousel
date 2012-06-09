@@ -36,7 +36,7 @@
 		var contentItems = contentCollection.find('.contentItem');
 		var contentItemHeight = 0;
 		var contentItemOffset = 0;
-		var links = contentItems.find('.contentLink');
+		var contentLinks = contentItems.find('.contentLink');
 		var list = $('<div class="contentNavigation" />');
 		var listHeight = 0;
 		var listItems;
@@ -45,13 +45,13 @@
 		var nextItem = 0;
 
 		// don't show a list of just one link
-		if (links.length <= 1) { return; }
+		if (contentLinks.length <= 1) { return; }
 
 		// 'hover' is a helper name, change to 'mouseenter'
 		if (o.mouseEvent === 'hover') { o.mouseEvent = 'mouseenter'; }
 
 		// get list of links from content items; adding index as data attr since it will be faster to add here rather than figure out index later
-		listItems = $.map(links, function(link, i) { return '<li><a href="' + link.href + '" data-index="' + i + '">' + (link.textContent || link.innerText) + '</a></li>'; });
+		listItems = $.map(contentLinks, function(link, i) { return '<li><a href="' + link.href + '" data-index="' + i + '">' + (link.textContent || link.innerText) + '</a></li>'; });
 
 		// create jQ collection of of list items since we'll need it later
 		listItems = $(listItems.join(''));
@@ -131,7 +131,7 @@
 		};
 
 		// attach event handler function
-		listItems.on(o.mouseEvent, 'a', event, showContent);
+		listItems.on(o.mouseEvent, 'a', showContent);
 
 		// trigger mousevent on the first link to get the ball rolling
 		list.find('a').eq(0).trigger(o.mouseEvent);

@@ -12,16 +12,6 @@ A jQuery plugin that takes a list of content items and generates a navigation li
 
 ### Markup Structure:
 
-Expects to see html in this form:
-
-> div.contentNavigationCarousel
-> > div.contentCollection
-> > > div.contentItem
-> > > div.contentItem
-> > > div.contentItem
-   
-...etc.
-
 ###Example:
 	$('.contentNavigationCarousel').contentNavigationCarousel({
 		autoPlay: true,
@@ -37,4 +27,4 @@ Expects to see html in this form:
 * If content item html contains images, make sure their dimensions are set either by css on inline img attributes. If they're not, height calculations will likely be off as they're calculated before the images are finished loading.
 
 ###Tested in: 
-Chrome, FF, IE7+
+Chrome, FF, IE7+, Opera, Safari
