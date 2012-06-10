@@ -11,8 +11,8 @@
 	var pluginName = 'contentNavigationCarousel';
 	var document = window.document;
 	var defaults = {
-		autoPlay: true,
-		autoPlaySpeed: 10000,
+		autoplay: true,
+		autoplaySpeed: 10000,
 		mouseEvent: 'click',
 		switchSpeed: 500,
 		equalizeHeights: true
@@ -40,9 +40,83 @@
 		var list = $('<div class="contentNavigation" />');
 		var listHeight = 0;
 		var listItems;
+		var listItemsCount = 0;
 		var listItem;
 		var visibleItem = -1;
 		var nextItem = 0;
+		var autoplayOverride = carousel.attr('data-autoplay');
+		
+		// autoplay object
+		var autoplay = {
+			
+			// initialize autoplay
+			start: function() {
+				this.timeout = setTimeout(
+					$.proxy(this.next, this),
+					o.autoplaySpeed
+				);
+			},
+			
+			// recursed function
+			next: function(){
+				nextItem = (nextItem === listItemsCount - 1) ? 0 : nextItem + 1;
+				itemSelect(nextItem);
+			},
+			
+			// stop autoplay
+			stop: function() {
+				clearTimeout(this.timeout);
+			}
+
+		};
+		
+		// select item to trigger mouseEvent by index
+		var itemSelect = function (index) {
+			listItems.eq(index).find('a').trigger(o.mouseEvent);
+		};
+		
+		// event handler to show the selected content item
+		var showContent = function (e) {
+
+			// stop autoplay
+			if (o.autoplay) { autoplay.stop(); }
+
+			// if mouse event is a click, prevent the browser following the href
+			if (o.mouseEvent === 'click') {
+				e.preventDefault();
+			}
+
+			// cache item selector
+			listItem = $(this);
+
+			// get index of current item focus
+			nextItem = listItem.data('index');
+
+			// remove active class
+			// need to check entire item stack because of animation race conditions
+			listItems.removeClass('active');
+
+			// add active class to current item
+			listItems.eq(nextItem).addClass('active');
+
+			// if we're not on the active item then switch out visible content
+			if (nextItem !== visibleItem) {
+
+				contentItems.eq(visibleItem).fadeOut(o.switchSpeed/2, function() {
+
+					contentItems.eq(nextItem).fadeIn(o.switchSpeed/2);
+
+				});
+
+				// update visibleItem
+				visibleItem = nextItem;
+
+			}
+
+			// restart autoplay
+			if (o.autoplay) { autoplay.start(); }
+
+		};
 
 		// don't show a list of just one link
 		if (contentLinks.length <= 1) { return; }
@@ -51,7 +125,10 @@
 		if (o.mouseEvent === 'hover') { o.mouseEvent = 'mouseenter'; }
 
 		// get list of links from content items; adding index as data attr since it will be faster to add here rather than figure out index later
-		listItems = $.map(contentLinks, function(link, i) { return '<li><a href="' + link.href + '" data-index="' + i + '">' + (link.textContent || link.innerText) + '</a></li>'; });
+		listItems = $.map(contentLinks, function(link, i) {
+			listItemsCount++;
+			return '<li><a href="' + link.href + '" data-index="' + i + '">' + (link.textContent || link.innerText) + '</a></li>';
+		});
 
 		// create jQ collection of of list items since we'll need it later
 		listItems = $(listItems.join(''));
@@ -93,48 +170,27 @@
 			$(this).css({'display': 'none','top': contentItemOffset + 'px'});
 
 		});
-
-		var showContent = function (e) {
-
-			// if mouse event is a click, prevent the browser following the href
-			if (o.mouseEvent === 'click') {
-				e.preventDefault();
+		
+		// this is an inline override for the autoplay; by using the attribute 'data-autoplay' autoplay could be
+		// turned on (or it's speed changed) on a widget-level; it can also turn off autoplay if it's set to 0
+		if (autoplayOverride) {
+			if (autoplayOverride > 0) {
+				o.autoplay = true;
+				o.autoplaySpeed = autoplayOverride;
+			} else {
+				o.autoplay = false;
+				o.autoplaySpeed = 0;
 			}
-
-			// cache item selector
-			listItem = $(this);
-
-			// get index of current item focus
-			nextItem = listItem.data('index');
-
-			// remove active class
-			// need to check entire item stack because of animation race conditions
-			listItems.removeClass('active');
-
-			// add active class to current item
-			listItems.eq(nextItem).addClass('active');
-
-			// if we're not on the active item then switch out visible content
-			if (nextItem !== visibleItem) {
-
-				contentItems.eq(visibleItem).fadeOut(o.switchSpeed/2, function() {
-
-					contentItems.eq(nextItem).fadeIn(o.switchSpeed/2);
-
-				});
-
-				// update visibleItem
-				visibleItem = nextItem;
-
-			}
-
-		};
+		}
 
 		// attach event handler function
 		listItems.on(o.mouseEvent, 'a', showContent);
 
-		// trigger mousevent on the first link to get the ball rolling
-		list.find('a').eq(0).trigger(o.mouseEvent);
+		// start autoplay if it's enabled
+		if (o.autoplay) { autoplay.start(); }
+
+		// initialize plugin by selecting the first item in the content navigation list
+		itemSelect(nextItem);
 
 	};
 
