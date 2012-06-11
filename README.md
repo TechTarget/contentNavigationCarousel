@@ -1,4 +1,4 @@
-# contentNavigationCarousel
+# Content Navigation Carousel
 
 A jQuery plugin that takes a list of content items and generates a navigation list from content links to form the awesome power of a carousel.
 

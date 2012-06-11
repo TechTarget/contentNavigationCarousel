@@ -1,4 +1,4 @@
-# Page Performance Logger
+# Content Navigation Carousel
 
 ## Available for use under the [MIT License](http://www.opensource.org/licenses/MIT)
 
