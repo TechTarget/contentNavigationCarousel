@@ -42,41 +42,67 @@
 		var listItems;
 		var listItemsCount = 0;
 		var listItem;
-		var visibleItem = -1;
-		var nextItem = 0;
+		var activeItemIndex = -1;
+		var nextItemIndex = 0;
 		var autoplayOverride = carousel.attr('data-autoplay');
-		
+
 		// autoplay object
 		var autoplay = {
-			
+
 			// initialize autoplay
 			start: function() {
-				this.timeout = setTimeout(
-					$.proxy(this.next, this),
+				this.timer = setTimeout(
+					$.proxy(this.pause, this),
 					o.autoplaySpeed
 				);
 			},
-			
-			// recursed function
-			next: function(){
-				nextItem = (nextItem === listItemsCount - 1) ? 0 : nextItem + 1;
-				itemSelect(nextItem);
+
+			// don't restart the autoplay until the user moves their mouse pointer off list item
+			// this pause is in order to give them as much time as they want to read the content
+			pause: function(){
+
+				this.interval = window.setInterval(
+					$.proxy(this.checkMouseLocation, this),
+					500
+				);
+
 			},
 			
+			// check the location of the mouse pointer and continue with autoplay progression
+			// unless mouse is over active list item
+			checkMouseLocation: function() {
+				if (listItems.eq(activeItemIndex).find('a').data('mouse') !== 'on') {
+					clearInterval(this.interval);
+					this.getNextItem();
+				}
+			},
+
+			// determine the next item to select
+			getNextItem: function(){
+
+				// increment the next item index or reset if at end of list
+				nextItemIndex = (nextItemIndex === listItemsCount - 1) ? 0 : nextItemIndex + 1;
+
+				// select next item in list
+				itemSelect(nextItemIndex);
+
+			},
+
 			// stop autoplay
 			stop: function() {
-				clearTimeout(this.timeout);
+				clearTimeout(this.timer);
 			}
 
 		};
-		
+
 		// select item to trigger mouseEvent by index
+		// also pass data as 'triggered' to indicate this was not a user event
 		var itemSelect = function (index) {
-			listItems.eq(index).find('a').trigger(o.mouseEvent);
+			listItems.eq(index).find('a').trigger(o.mouseEvent, ['triggered']);
 		};
-		
+
 		// event handler to show the selected content item
-		var showContent = function (e) {
+		var showContent = function (e, eType) {
 
 			// stop autoplay
 			if (o.autoplay) { autoplay.stop(); }
@@ -88,35 +114,53 @@
 
 			// cache item selector
 			listItem = $(this);
+			
+			// if we got here through a trigger, than change 'mouse' data attr to off
+			if (eType === 'triggered') {
+				listItem.data('mouse','off');
+			}
 
 			// get index of current item focus
-			nextItem = listItem.data('index');
+			nextItemIndex = listItem.data('index');
 
 			// remove active class
 			// need to check entire item stack because of animation race conditions
 			listItems.removeClass('active');
 
 			// add active class to current item
-			listItems.eq(nextItem).addClass('active');
+			listItems.eq(nextItemIndex).addClass('active');
 
 			// if we're not on the active item then switch out visible content
-			if (nextItem !== visibleItem) {
-
-				contentItems.eq(visibleItem).fadeOut(o.switchSpeed/2, function() {
-
-					contentItems.eq(nextItem).fadeIn(o.switchSpeed/2);
+			if (nextItemIndex !== activeItemIndex) {
+				
+				contentItems.eq(activeItemIndex).fadeOut(o.switchSpeed/2, function() {
+					
+					//fade in content on callback
+					contentItems.eq(nextItemIndex).fadeIn(o.switchSpeed/2);
 
 				});
 
-				// update visibleItem
-				visibleItem = nextItem;
+				// update activeItemIndex
+				activeItemIndex = nextItemIndex;
 
 			}
 
-			// restart autoplay
+			// restart autplay
 			if (o.autoplay) { autoplay.start(); }
 
 		};
+
+		// this is an inline override for the autoplay; by using the attribute 'data-autoplay' autoplay could be
+		// turned on (or it's speed changed) on a widget-level; it can also turn off autoplay if it's set to 0
+		if (autoplayOverride) {
+			if (autoplayOverride > 0) {
+				o.autoplay = true;
+				o.autoplaySpeed = autoplayOverride;
+			} else {
+				o.autoplay = false;
+				o.autoplaySpeed = 0;
+			}
+		}
 
 		// don't show a list of just one link
 		if (contentLinks.length <= 1) { return; }
@@ -170,27 +214,22 @@
 			$(this).css({'display': 'none','top': contentItemOffset + 'px'});
 
 		});
-		
-		// this is an inline override for the autoplay; by using the attribute 'data-autoplay' autoplay could be
-		// turned on (or it's speed changed) on a widget-level; it can also turn off autoplay if it's set to 0
-		if (autoplayOverride) {
-			if (autoplayOverride > 0) {
-				o.autoplay = true;
-				o.autoplaySpeed = autoplayOverride;
-			} else {
-				o.autoplay = false;
-				o.autoplaySpeed = 0;
-			}
-		}
 
-		// attach event handler function
+		// register event handler to add data attribute of mouse status over element
+		listItems.on({
+			mouseenter : function() {
+				$(this).data('mouse', 'on');
+			},
+			mouseleave : function() {
+				$(this).data('mouse', 'off');
+			}
+		}, 'a');
+
+		// register event handler for user-defined mouse event
 		listItems.on(o.mouseEvent, 'a', showContent);
 
-		// start autoplay if it's enabled
-		if (o.autoplay) { autoplay.start(); }
-
 		// initialize plugin by selecting the first item in the content navigation list
-		itemSelect(nextItem);
+		itemSelect(nextItemIndex);
 
 	};
 
