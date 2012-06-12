@@ -9,7 +9,6 @@
 
 	// the default settings
 	var pluginName = 'contentNavigationCarousel';
-	var document = window.document;
 	var defaults = {
 		autoplay: true,
 		autoplaySpeed: 10000,
@@ -29,6 +28,7 @@
 
 	Plugin.prototype.init = function () {
 
+		// plugin vars
 		var o = this.options;
 		var carousel = $(this.element);
 		var contentCollection = carousel.find('.contentCollection');
@@ -37,7 +37,7 @@
 		var contentItemHeight = 0;
 		var contentItemOffset = 0;
 		var contentLinks = contentItems.find('.contentLink');
-		var list = $('<div class="contentNavigation" />');
+		var list = $('<div />', {'class': 'contentNavigation'});
 		var listHeight = 0;
 		var listItems;
 		var listItemsCount = 0;
@@ -67,7 +67,7 @@
 				);
 
 			},
-			
+
 			// check the location of the mouse pointer and continue with autoplay progression
 			// unless mouse is over active list item
 			checkMouseLocation: function() {
@@ -163,7 +163,7 @@
 		}
 
 		// don't show a list of just one link
-		if (contentLinks.length <= 1) { return; }
+		if (contentLinks.length <= 1) { console.log('asdf'); return; }
 
 		// 'hover' is a helper name, change to 'mouseenter'
 		if (o.mouseEvent === 'hover') { o.mouseEvent = 'mouseenter'; }
