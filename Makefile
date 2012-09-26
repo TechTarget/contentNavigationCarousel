@@ -4,26 +4,30 @@
 SCRIPT_DEV = contentNavigationCarousel.js
 SCRIPT_MIN = contentNavigationCarousel.min.js
 
-FILESIZE := `wc --bytes ${SCRIPT_MIN}.gz | awk '{print $$1}'`
 FILESIZE_MAX = 1000
-FILESIZE_YAY = -e "\e[42m gzip size -> ${FILESIZE} bytes\e[0m \(^_^)/"
-FILESIZE_BOO = -e "\e[41m gzip size -> ${FILESIZE} bytes\e[0m ^(>_<)^"
+FILESIZE_GZIP = `gzip -c ${SCRIPT_MIN} | wc -c`
+FILESIZE_PASS = "${FILESIZE_GZIP} bytes  \(^_^)/"
+FILESIZE_FAIL = "${FILESIZE_GZIP} bytes  ^(>_<)^"
+
 define FILESIZE_CHECK
-	if [ ${FILESIZE} -gt ${FILESIZE_MAX} ]; then \
-        echo ${FILESIZE_BOO}; \
-    else \
-    	echo ${FILESIZE_YAY}; \
-    fi
+	if [ ${FILESIZE_GZIP} -gt ${FILESIZE_MAX} ]; then \
+		tput setaf 1; \
+		echo ${FILESIZE_FAIL}; \
+		tput sgr0; \
+	else \
+		tput setaf 2; \
+		echo ${FILESIZE_PASS}; \
+		tput sgr0; \
+	fi
 endef
 
 default:
 
-	@echo " linting..."
-	@jshint ${SCRIPT_DEV} --show-non-errors --config jshintConfig.json
+	@echo "* linting..."
+	@jshint ${SCRIPT_DEV} --show-non-errors
 
-	@echo " minifying..."
+	@echo "* minifying..."
 	@uglifyjs ${SCRIPT_DEV} > ${SCRIPT_MIN}
 
-	@gzip --best --stdout ${SCRIPT_MIN} > ${SCRIPT_MIN}.gz
+	@echo "* gzip test..."
 	@$(FILESIZE_CHECK)
-	@rm ${SCRIPT_MIN}.gz

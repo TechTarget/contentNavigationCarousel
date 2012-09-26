@@ -114,7 +114,7 @@
 
 			// cache item selector
 			listItem = $(this);
-			
+
 			// if we got here through a trigger, than change 'mouse' data attr to off
 			if (eType === 'triggered') {
 				listItem.data('mouse','off');
@@ -132,9 +132,9 @@
 
 			// if we're not on the active item then switch out visible content
 			if (nextItemIndex !== activeItemIndex) {
-				
+
 				contentItems.eq(activeItemIndex).fadeOut(o.switchSpeed/2, function() {
-					
+
 					//fade in content on callback
 					contentItems.eq(nextItemIndex).fadeIn(o.switchSpeed/2);
 
@@ -163,7 +163,7 @@
 		}
 
 		// don't show a list of just one link
-		if (contentLinks.length <= 1) { console.log('asdf'); return; }
+		if (contentLinks.length <= 1) { return; }
 
 		// 'hover' is a helper name, change to 'mouseenter'
 		if (o.mouseEvent === 'hover') { o.mouseEvent = 'mouseenter'; }
@@ -207,7 +207,7 @@
 
 		// set the top offsets of all the content items and
 		// now that their heights are known set display to none
-		contentItems.each( function(i) {
+		contentItems.each( function() {
 
 			contentItemHeight = $(this).height();
 			contentItemOffset = Math.round((listHeight - contentItemHeight)/2);
