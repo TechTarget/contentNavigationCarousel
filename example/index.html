@@ -1,167 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+
 	<meta charset="utf-8">
-	<title>Content Navigation Carousel</title>
-	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="../contentNavigationCarousel.js"></script>
-	<script src="script.js"></script>
+	<title>Content Navigation Carousel Tests</title>
+	<link rel="stylesheet" href="css/style.css" media="screen" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="../contentNavigationCarousel.min.js"></script>
+	<script src="js/test.js"></script>
+
 </head>
 <body>
-		
-	<h1>Content Navigation Carousel</h1>
-	
-	<div class="container">
-			
-		<!-- BEGIN: Content Navigation Carousel -->
-		<div class="contentNavigationCarousel" id="skin1">
-			
-			<div class="contentCollection">
-				
-				<div class="contentItem">
+<div id="micrositeContainer">
+<div id="micrositeContainerInner">
+<div id="micrositeContainerCompress">
 
-					<img src="http://lorempixum.com/150/150/technics/1" height="150" width="150" alt="photo1" />
-					<h2><a href="http://www.github.com" class="contentLink">A headline about Github.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+	<div id="micrositeHeader">Header</div>
 
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/2" height="150" width="150" alt="photo2" />
-					<h2><a href="http://www.google.com" class="contentLink">This headline is about Google.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/3" height="150" width="150" alt="photo3" />
-					<h2><a href="http://www.apple.com" class="contentLink">An interesting thing happened on Apple.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/4" height="150" width="150" alt="photo4" />
-					<h2><a href="http://www.yahoo.com" class="contentLink">This headline is about Yahoo.com and is longer than the previous headline</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/5" height="150" width="150" alt="photo5" />
-					<h2><a href="http://www.microsoft.com" class="contentLink">A Microsoft.com story</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				
-			</div>
-			
+		<div id="micrositeContent">
+
+		<div id="micrositeContentColumnFull">
+
+      <div class="container">
+
+        <!-- BEGIN: Content Navigation Carousel -->
+        <div class="contentNavigationCarousel" id="skin1">
+
+          <div class="contentCollection">
+
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/1" height="150" width="150" alt="photo1" />
+              <h2><a href="http://www.github.com" class="contentLink">A headline about Github.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/2" height="150" width="150" alt="photo2" />
+              <h2><a href="http://www.google.com" class="contentLink">This headline is about Google.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/3" height="150" width="150" alt="photo3" />
+              <h2><a href="http://www.apple.com" class="contentLink">An interesting thing happened on Apple.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/4" height="150" width="150" alt="photo4" />
+              <h2><a href="http://www.yahoo.com" class="contentLink">This headline is about Yahoo.com and is longer than the previous headline</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/5" height="150" width="150" alt="photo5" />
+              <h2><a href="http://www.microsoft.com" class="contentLink">A Microsoft.com story</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+        <!-- END: Content Navigation Carousel -->
+
+      </div>
+
+
+      <div class="container">
+
+        <!-- BEGIN: Content Navigation Carousel -->
+        <div class="contentNavigationCarousel" id="skin2">
+
+          <div class="contentCollection">
+
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/1" height="150" width="150" alt="photo1" />
+              <h2><a href="http://www.github.com" class="contentLink">A headline about Github.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/2" height="150" width="150" alt="photo2" />
+              <h2><a href="http://www.google.com" class="contentLink">This headline is about Google.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/3" height="150" width="150" alt="photo3" />
+              <h2><a href="http://www.apple.com" class="contentLink">An interesting thing happened on Apple.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/4" height="150" width="150" alt="photo4" />
+              <h2><a href="http://www.yahoo.com" class="contentLink">This headline is about Yahoo.com and is longer than the previous headline</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/5" height="150" width="150" alt="photo5" />
+              <h2><a href="http://www.microsoft.com" class="contentLink">A Microsoft.com story</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+        <!-- END: Content Navigation Carousel -->
+
+      </div>
+
+      <div class="container">
+
+        <!-- BEGIN: Content Navigation Carousel -->
+        <div class="contentNavigationCarousel" id="skin3">
+
+          <div class="contentCollection">
+
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/1" height="150" width="150" alt="photo1" />
+              <h2><a href="http://www.github.com" class="contentLink">A headline about Github.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/2" height="150" width="150" alt="photo2" />
+              <h2><a href="http://www.google.com" class="contentLink">This headline is about Google.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/3" height="150" width="150" alt="photo3" />
+              <h2><a href="http://www.apple.com" class="contentLink">An interesting thing happened on Apple.com</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/4" height="150" width="150" alt="photo4" />
+              <h2><a href="http://www.yahoo.com" class="contentLink">This headline is about Yahoo.com and is longer than the previous headline</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+            <div class="contentItem">
+
+              <img src="http://lorempixum.com/150/150/technics/5" height="150" width="150" alt="photo5" />
+              <h2><a href="http://www.microsoft.com" class="contentLink">A Microsoft.com story</a></h2>
+              <p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+        <!-- END: Content Navigation Carousel -->
+
 		</div>
-		<!-- END: Content Navigation Carousel -->
-					
-	</div>
-	
-	
-	<div class="container">
-			
-		<!-- BEGIN: Content Navigation Carousel -->
-		<div class="contentNavigationCarousel" id="skin2">
-			
-			<div class="contentCollection">
-				
-				<div class="contentItem">
 
-					<img src="http://lorempixum.com/150/150/technics/1" height="150" width="150" alt="photo1" />
-					<h2><a href="http://www.github.com" class="contentLink">A headline about Github.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
+	<div id="micrositeFooter">Footer</div>
 
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/2" height="150" width="150" alt="photo2" />
-					<h2><a href="http://www.google.com" class="contentLink">This headline is about Google.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/3" height="150" width="150" alt="photo3" />
-					<h2><a href="http://www.apple.com" class="contentLink">An interesting thing happened on Apple.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/4" height="150" width="150" alt="photo4" />
-					<h2><a href="http://www.yahoo.com" class="contentLink">This headline is about Yahoo.com and is longer than the previous headline</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/5" height="150" width="150" alt="photo5" />
-					<h2><a href="http://www.microsoft.com" class="contentLink">A Microsoft.com story</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-		<!-- END: Content Navigation Carousel -->
-				
-	</div>	
-		
-	<div class="container">
-			
-		<!-- BEGIN: Content Navigation Carousel -->
-		<div class="contentNavigationCarousel" id="skin3">
-			
-			<div class="contentCollection">
-				
-				<div class="contentItem">
-
-					<img src="http://lorempixum.com/150/150/technics/1" height="150" width="150" alt="photo1" />
-					<h2><a href="http://www.github.com" class="contentLink">A headline about Github.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/2" height="150" width="150" alt="photo2" />
-					<h2><a href="http://www.google.com" class="contentLink">This headline is about Google.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/3" height="150" width="150" alt="photo3" />
-					<h2><a href="http://www.apple.com" class="contentLink">An interesting thing happened on Apple.com</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/4" height="150" width="150" alt="photo4" />
-					<h2><a href="http://www.yahoo.com" class="contentLink">This headline is about Yahoo.com and is longer than the previous headline</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				<div class="contentItem">
-					
-					<img src="http://lorempixum.com/150/150/technics/5" height="150" width="150" alt="photo5" />
-					<h2><a href="http://www.microsoft.com" class="contentLink">A Microsoft.com story</a></h2>
-					<p>Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Duis odio odio, laoreet eu tellus. Aenean lorem nisl, molestie ut pulvinar in, rhoncus pellentesque nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Duis sollicitudin, lacus non volutpat porta, magna quam tincidunt nislem. Maecenas sem erat, scelerisque in elementum ut, lacinia posuere dui. Etiam nec dui accumsan semper nec a nunc.</p>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-		<!-- END: Content Navigation Carousel -->	
-			
-	</div>
-			
+</div>
+</div>
+</div>
 </body>
-</html>	
+</html>
