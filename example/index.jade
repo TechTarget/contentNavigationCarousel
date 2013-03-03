@@ -1,0 +1,29 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Content Navigation Carousel Tests
+    link(rel='stylesheet', href='css/style.css', media='screen')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    script(src='../contentNavigationCarousel.js')
+    script(src='javascript/test.js')
+  body
+    #micrositeContainer
+      #micrositeContainerInner
+        #micrositeContainerCompress
+          #micrositeHeader
+            h2 Header
+          #micrositeContent
+            #micrositeContentColumnFull
+              .container
+                // begin: content navigation carousel component
+                include contentNavigationCarousel
+            #micrositeContentColumnLeft
+              .container
+                // begin: content navigation carousel component
+                include contentNavigationCarousel
+            #micrositeContentColumnRight
+              p Et vel nihil discere delicata, pro autem fierent definitiones ea. Purto nostro tacimates in sea. Vel ea habeo pertinacia, has amet tollit suavitate te. Et quodsi rationibus cum. In eos dicta sanctus, adhuc civibus ad ius. Duo corrumpit incorrupte cu. Illum molestie mel cu, qui ei prompta bonorum probatus.
+            div(style='clear: both;')
+          #micrositeFooter
+            h2 Footer
