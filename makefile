@@ -1,6 +1,3 @@
-# LINT & MINIFY
-# jshint (>=0.9) & uglifyjs (>=2.2) are required
-
 SCRIPT_NAME = contentNavigationCarousel
 FILESIZE_MAX = 1000
 FILESIZE_GZIP = `gzip -c ${SCRIPT_NAME}.min.js | wc -c`
@@ -34,3 +31,14 @@ default:
 
 	@echo "* gzip test..."
 	@$(FILESIZE_CHECK)
+
+compile:
+
+	@echo "* compiling jade templates"
+	@jade -P ./example/index.jade
+
+	@echo "* compiling sass..."
+	@sass ./example/sass/screen.scss ./example/screen.css
+
+	@echo "* compiling coffeescript..."
+	@coffee -p ${SCRIPT_NAME}.coffee > ${SCRIPT_NAME}.js
