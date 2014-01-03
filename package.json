@@ -1,8 +1,13 @@
 {
   "name": "contentNavigationCarousel",
-  "main": "contentNavigationCarousel",
-  "description": "jQuery plugin for 'content navigation' carousel",
-  "version": "1.0.1",
+  "private": true,
+  "main": "contentNavigationCarousel.js",
+   "description": "jQuery plugin for a content matrix",
+   "version": "1.0.1",
   "author": "Morgan Wigmanich <okize123@gmail.com> (http://github.com/okize)",
-    "license": "MIT"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TechTarget/contentNavigationCarousel"
+  },
+  "license": "MIT"
+}
