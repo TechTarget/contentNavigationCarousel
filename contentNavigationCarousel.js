@@ -1,7 +1,9 @@
 /*!
- * contentNavigationCarousel v1.0.0 (http://okize.github.com/)
- * Copyright (c) 2012 | Licensed under the MIT license - http://www.opensource.org/licenses/mit-license.php
- */
+* contentNavigationCarousel v1.0.1 (https://github.com/TechTarget/contentNavigationCarousel)
+* Author: Morgan Wigmanich <okize123@gmail.com> (http://github.com/okize)
+* Copyright (c) 2013 | Licensed under the MIT license
+* http://www.opensource.org/licenses/mit-license.php
+*/
 
 ;(function ( $, window, undefined ) {
 
